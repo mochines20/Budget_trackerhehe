@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7f3ec" />
+  <title>Pixel — Tropa trip fund</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">✦</span><span>pixel</span></div>
+      <div class="trip-switcher"><span class="trip-avatar">🏝️</span><span><b>El Nido escape</b><small>Summer 2027</small></span><span class="chevron">⌄</span></div>
+      <nav class="nav" aria-label="Main navigation">
+        <button class="nav-item active" data-tab="overview"><span>◒</span> Overview</button>
+        <button class="nav-item" data-tab="contributions"><span>↗</span> Contributions <em id="pendingBadge">2</em></button>
+        <button class="nav-item" data-tab="itinerary"><span>□</span> Itinerary</button>
+        <button class="nav-item" data-tab="settle"><span>⇄</span> Settle up</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <button class="nav-item" data-tab="settings"><span>⚙</span> Trip settings</button>
+        <div class="help-card"><span class="help-icon">?</span><b>Need a hand?</b><small>Quick budget math for the group.</small><button id="askHati">Show budget tip <span>↗</span></button></div>
+        <div class="user"><div class="avatar avatar-teal">J</div><span><b>Juan Dela Cruz</b><small>Trip admin</small></span><span class="more">···</span></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar"><button class="mobile-menu" id="mobileMenu">☰</button><div class="breadcrumbs">My trips <span>/</span> <b>El Nido escape</b></div><div class="top-actions"><span class="saved" id="syncStatus">● Connecting…</span><button class="icon-button" aria-label="Notifications">♧<i></i></button><button class="share-button" id="shareBtn">↗ Share summary</button></div></header>
+      <div class="content">
+        <section class="page-heading"><div><div class="eyebrow">FRIENDS · 8 PEOPLE</div><h1>El Nido escape <span>🏝️</span></h1><p>Let’s make the memories worth the money.</p></div><div class="countdown"><small>TRIP COUNTDOWN</small><strong id="countdown">— <span>days</span></strong><span>until May 18, 2027</span></div></section>
+
+        <div class="tab-view active" id="overviewView">
+          <section class="hero-grid">
+            <div class="goal-card card"><div class="card-top"><div><span class="label">GROUP GOAL</span><h2 id="goalAmount">₱64,000</h2><p id="goalSub">₱42,750 raised so far</p></div><div class="goal-ring" id="goalRing"><span id="goalPercent">67%</span><small>funded</small></div></div><div class="progress-track large"><div id="goalProgress" style="width:67%"></div></div><div class="goal-bottom"><span>₱21,250 to go</span><span>Target · May 10, 2025</span></div></div>
+            <div class="insight-card card"><div class="card-top"><div><span class="label accent-label">PIXEL BUDGET NOTE</span><h3>Simple math, clear plan.</h3></div><span class="spark">⌁</span></div><p id="insightText">Your remaining balance is split equally across the crew, unless you set a custom member goal.</p><div class="insight-tip"><span>↗</span><span>Keep adding actual payments so everyone sees the same progress.</span></div><button class="text-button" id="insightBtn">Show split math <span>→</span></button></div>
+          </section>
+
+          <section class="section-block"><div class="section-heading"><div><span class="label">MILESTONES</span><h2>Little wins, big trip</h2></div><span class="muted">2 of 4 unlocked</span></div><div class="milestones card"><div class="milestone done"><span class="milestone-icon">✓</span><b>25%</b><small>First steps</small></div><div class="milestone done"><span class="milestone-icon">✓</span><b>50%</b><small>Halfway there</small></div><div class="milestone current"><span class="milestone-icon">67</span><b>75%</b><small>Almost golden</small></div><div class="milestone"><span class="milestone-icon">🏖</span><b>100%</b><small>Beach unlocked</small></div></div></section>
+
+          <section class="overview-lower"><div class="section-block"><div class="section-heading"><div><span class="label">THE CREW</span><h2>Contributions</h2></div><button class="text-button" data-tab="contributions">View all <span>→</span></button></div><div class="crew-list card" id="crewList"></div></div><div class="section-block"><div class="section-heading"><div><span class="label">NEXT UP</span><h2>Itinerary preview</h2></div><button class="text-button" data-tab="itinerary">Full itinerary <span>→</span></button></div><div id="previewItems"><div class="itinerary-preview card"><div class="date-chip"><b>18</b><small>MAY</small></div><div><b>Arrival + island hopping</b><span>Puerto Princesa → El Nido</span></div><strong>₱1,800</strong></div><div class="itinerary-preview card"><div class="date-chip coral"><b>19</b><small>MAY</small></div><div><b>Big Lagoon day</b><span>Tour A · shared boat</span></div><strong>₱3,200</strong></div></div></div></section>
+        </div>
+
+        <div class="tab-view" id="contributionsView"><div class="view-title"><div><span class="label">MONEY IN</span><h2>Contribution tracker</h2><p>Set a goal for each person, then log actual payments.</p></div><div class="button-stack"><button class="outline-button" id="setMemberGoal">＋ Set individual goal</button><button class="primary-button" id="addContribution">＋ Log a contribution</button></div></div><section class="stat-row"><div class="stat card"><small>GROUP PROGRESS</small><b id="groupProgressStat">67%</b><span id="groupProgressCopy">₱42,750 of ₱64,000</span></div><div class="stat card"><small>PER PERSON TARGET</small><b id="splitTargetStat">₱8,000</b><span>Auto-split from group goal</span></div><div class="stat card"><small>REMAINING / PERSON</small><b id="remainingPerPersonStat">₱2,656</b><span>Equal share for now</span></div></section><div class="section-heading"><div><span class="label">BY PERSON</span><h2>Individual goals & progress</h2></div><span class="muted">Set custom goals anytime</span></div><div class="full-crew card" id="fullCrew"></div><div class="section-heading ledger-heading"><div><span class="label">RECENT ACTIVITY</span><h2>Contribution log</h2></div></div><div class="ledger card" id="ledger"></div></div>
+
+        <div class="tab-view" id="itineraryView"><div class="view-title"><div><span class="label">THE PLAN</span><h2>Itinerary & budget</h2><p>Add the next gala and the budget splits automatically per member.</p></div><button class="primary-button" id="addItem">＋ Add next gala</button></div><div class="itinerary-layout"><div class="day-list" id="dayList"></div><aside class="breakdown card"><span class="label">BUDGET BREAKDOWN</span><h3>Trip costs</h3><div id="breakdownList"></div><div class="breakdown-total"><span>Itinerary total</span><b id="itineraryTotal">₱42,400</b></div><div class="auto-split"><span>Auto split / person</span><b id="autoSplitTotal">₱5,300</b></div><p class="breakdown-note">Each item is divided by the current number of members. Optional items stay separate.</p></aside></div></div>
+
+        <div class="tab-view" id="settleView"><div class="view-title"><div><span class="label">MONEY OUT</span><h2>Settle up</h2><p>Keep advances clear, so the only thing left to split is the sunset.</p></div><button class="primary-button" id="addExpense">＋ Add shared expense</button></div><div class="settle-banner card"><div class="settle-icon">⇄</div><div><span class="label">AFTER THE TRIP</span><h3>3 people need to settle</h3><p>Net balances are based on ₱18,400 in shared advances.</p></div><button class="outline-button" id="markSettled">Mark all settled</button></div><div class="section-heading"><div><span class="label">SIMPLEST SETTLEMENT</span><h2>Who pays whom</h2></div><span class="muted">Minimized to 4 transfers</span></div><div class="settle-list card" id="settleList"></div></div>
+
+        <div class="tab-view" id="settingsView"><div class="view-title"><div><span class="label">YOUR TRIP</span><h2>Trip settings</h2><p>Make this space feel like your crew.</p></div></div><div class="settings-card card"><label>Group name<input value="El Nido escape" id="groupNameInput"></label><label>Trip emoji<input value="🏝️" id="emojiInput"></label><label>Goal amount<input value="64000" type="number" id="goalInput"></label><label>Trip date<input value="2027-05-18" type="date" id="dateInput"></label><button class="primary-button" id="saveSettings">Save changes</button></div></div>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast"></div>
+  <div class="modal-backdrop" id="modal"><div class="modal card"><button class="modal-close" id="closeModal">×</button><span class="label" id="modalLabel">NEW ENTRY</span><h2 id="modalTitle">Log a contribution</h2><form id="entryForm"><label id="personField">Person<select id="entryPerson"></select></label><label id="descriptionField">Description<input id="entryName" placeholder="e.g. Beach trip or gala name"></label><label>Amount<input id="entryAmount" type="number" min="1" placeholder="e.g. 500" required></label><label>Date<input id="entryDate" type="date" required></label><label id="noteField">Note<input id="entryNote" placeholder="Optional note"></label><button class="primary-button" type="submit">Save entry</button></form></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
