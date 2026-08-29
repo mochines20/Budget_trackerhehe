@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#f7f3ec" />
-  <title>Pixel — Tropa trip fund</title>
+  <title>Saan Punta? — Tropa trip fund</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
 <body>
   <div class="app-shell">
     <aside class="sidebar">
-      <div class="brand"><span class="brand-mark">✦</span><span>pixel</span></div>
+      <div class="brand"><span class="brand-mark">✦</span><span>Saan Punta?</span></div>
       <div class="trip-switcher"><span class="trip-avatar" id="sideEmoji">✦</span><span><b id="sideTripName">New trip</b><small id="sideTripMeta">Set up your gala</small></span><span class="chevron">⌄</span></div>
       <nav class="nav" aria-label="Main navigation">
         <button class="nav-item active" data-tab="overview"><span>◒</span> Overview</button>
@@ -35,10 +35,10 @@
         <div class="tab-view active" id="overviewView">
           <section class="hero-grid">
             <div class="goal-card card"><div class="card-top"><div><span class="label">GROUP GOAL</span><h2 id="goalAmount">₱64,000</h2><p id="goalSub">₱42,750 raised so far</p></div><div class="goal-ring" id="goalRing"><span id="goalPercent">67%</span><small>funded</small></div></div><div class="progress-track large"><div id="goalProgress" style="width:67%"></div></div><div class="goal-bottom"><span>₱21,250 to go</span><span>Target · May 10, 2025</span></div></div>
-            <div class="insight-card card"><div class="card-top"><div><span class="label accent-label">PIXEL BUDGET NOTE</span><h3>Simple math, clear plan.</h3></div><span class="spark">⌁</span></div><p id="insightText">Your remaining balance is split equally across the crew, unless you set a custom member goal.</p><div class="insight-tip"><span>↗</span><span>Keep adding actual payments so everyone sees the same progress.</span></div><button class="text-button" id="insightBtn">Show split math <span>→</span></button></div>
+            <div class="insight-card card"><div class="card-top"><div><span class="label accent-label">BUDGET NOTE</span><h3>Simple math, clear plan.</h3></div><span class="spark">⌁</span></div><p id="insightText">Your remaining balance is split equally across the crew, unless you set a custom member goal.</p><div class="insight-tip"><span>↗</span><span>Keep adding actual payments so everyone sees the same progress.</span></div><button class="text-button" id="insightBtn">Show split math <span>→</span></button></div>
           </section>
 
-          <section class="section-block"><div class="section-heading"><div><span class="label">MILESTONES</span><h2>Little wins, big trip</h2></div><span class="muted">2 of 4 unlocked</span></div><div class="milestones card"><div class="milestone done"><span class="milestone-icon">✓</span><b>25%</b><small>First steps</small></div><div class="milestone done"><span class="milestone-icon">✓</span><b>50%</b><small>Halfway there</small></div><div class="milestone current"><span class="milestone-icon">67</span><b>75%</b><small>Almost golden</small></div><div class="milestone"><span class="milestone-icon">🏖</span><b>100%</b><small>Beach unlocked</small></div></div></section>
+          <section class="section-block"><div class="section-heading"><div><span class="label">MILESTONES</span><h2>Little wins, big trip</h2></div><span class="muted" id="milestoneCount">0 of 4 unlocked</span></div><div class="milestones card" id="milestoneList"></div></section>
 
           <section class="overview-lower"><div class="section-block"><div class="section-heading"><div><span class="label">THE CREW</span><h2>Contributions</h2></div><button class="text-button" data-tab="contributions">View all <span>→</span></button></div><div class="crew-list card" id="crewList"></div></div><div class="section-block"><div class="section-heading"><div><span class="label">NEXT UP</span><h2>Itinerary preview</h2></div><button class="text-button" data-tab="itinerary">Full itinerary <span>→</span></button></div><div id="previewItems"><div class="itinerary-preview card"><div class="date-chip"><b>18</b><small>MAY</small></div><div><b>Arrival + island hopping</b><span>Puerto Princesa → El Nido</span></div><strong>₱1,800</strong></div><div class="itinerary-preview card"><div class="date-chip coral"><b>19</b><small>MAY</small></div><div><b>Big Lagoon day</b><span>Tour A · shared boat</span></div><strong>₱3,200</strong></div></div></div></section>
         </div>

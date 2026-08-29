@@ -1,4 +1,4 @@
-# Pixel Budget Tracker
+# Saan Punta? Budget Tracker
 
 A lightweight, responsive tropa trip-budget tracker built as a static app for Vercel.
 
