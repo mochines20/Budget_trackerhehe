@@ -14,7 +14,7 @@
   <div class="app-shell">
     <aside class="sidebar">
       <div class="brand"><span class="brand-mark">✦</span><span>pixel</span></div>
-      <div class="trip-switcher"><span class="trip-avatar">🏝️</span><span><b>El Nido escape</b><small>Summer 2027</small></span><span class="chevron">⌄</span></div>
+      <div class="trip-switcher"><span class="trip-avatar" id="sideEmoji">✦</span><span><b id="sideTripName">New trip</b><small id="sideTripMeta">Set up your gala</small></span><span class="chevron">⌄</span></div>
       <nav class="nav" aria-label="Main navigation">
         <button class="nav-item active" data-tab="overview"><span>◒</span> Overview</button>
         <button class="nav-item" data-tab="contributions"><span>↗</span> Contributions <em id="pendingBadge">2</em></button>
@@ -24,14 +24,13 @@
       <div class="sidebar-bottom">
         <button class="nav-item" data-tab="settings"><span>⚙</span> Trip settings</button>
         <div class="help-card"><span class="help-icon">?</span><b>Need a hand?</b><small>Quick budget math for the group.</small><button id="askHati">Show budget tip <span>↗</span></button></div>
-        <div class="user"><div class="avatar avatar-teal">J</div><span><b>Juan Dela Cruz</b><small>Trip admin</small></span><span class="more">···</span></div>
       </div>
     </aside>
 
     <main class="main">
-      <header class="topbar"><button class="mobile-menu" id="mobileMenu">☰</button><div class="breadcrumbs">My trips <span>/</span> <b>El Nido escape</b></div><div class="top-actions"><span class="saved" id="syncStatus">● Connecting…</span><button class="icon-button" aria-label="Notifications">♧<i></i></button><button class="share-button" id="shareBtn">↗ Share summary</button></div></header>
+      <header class="topbar"><button class="mobile-menu" id="mobileMenu">☰</button><div class="breadcrumbs">My trips <span>/</span> <b id="breadcrumbName">New trip</b></div><div class="top-actions"><span class="saved" id="syncStatus">● Connecting…</span><button class="icon-button" aria-label="Notifications">♧<i></i></button><button class="share-button" id="shareBtn">↗ Share summary</button></div></header>
       <div class="content">
-        <section class="page-heading"><div><div class="eyebrow">FRIENDS · 8 PEOPLE</div><h1>El Nido escape <span>🏝️</span></h1><p>Let’s make the memories worth the money.</p></div><div class="countdown"><small>TRIP COUNTDOWN</small><strong id="countdown">— <span>days</span></strong><span>until May 18, 2027</span></div></section>
+        <section class="page-heading"><div><div class="eyebrow" id="crewLabel">YOUR TROPA · 0 PEOPLE</div><h1 id="groupTitle">Your next trip <span id="groupEmoji"></span></h1><p id="groupSubtitle">Set up your group, goal, and first gala.</p></div><div class="countdown"><small>TRIP COUNTDOWN</small><strong id="countdown">— <span>days</span></strong><span id="countdownDate">Choose a trip date in settings</span></div></section>
 
         <div class="tab-view active" id="overviewView">
           <section class="hero-grid">
@@ -50,7 +49,7 @@
 
         <div class="tab-view" id="settleView"><div class="view-title"><div><span class="label">MONEY OUT</span><h2>Settle up</h2><p>Keep advances clear, so the only thing left to split is the sunset.</p></div><button class="primary-button" id="addExpense">＋ Add shared expense</button></div><div class="settle-banner card"><div class="settle-icon">⇄</div><div><span class="label">AFTER THE TRIP</span><h3>3 people need to settle</h3><p>Net balances are based on ₱18,400 in shared advances.</p></div><button class="outline-button" id="markSettled">Mark all settled</button></div><div class="section-heading"><div><span class="label">SIMPLEST SETTLEMENT</span><h2>Who pays whom</h2></div><span class="muted">Minimized to 4 transfers</span></div><div class="settle-list card" id="settleList"></div></div>
 
-        <div class="tab-view" id="settingsView"><div class="view-title"><div><span class="label">YOUR TRIP</span><h2>Trip settings</h2><p>Make this space feel like your crew.</p></div></div><div class="settings-card card"><label>Group name<input value="El Nido escape" id="groupNameInput"></label><label>Trip emoji<input value="🏝️" id="emojiInput"></label><label>Goal amount<input value="64000" type="number" id="goalInput"></label><label>Trip date<input value="2027-05-18" type="date" id="dateInput"></label><button class="primary-button" id="saveSettings">Save changes</button></div></div>
+        <div class="tab-view" id="settingsView"><div class="view-title"><div><span class="label">YOUR TRIP</span><h2>Trip settings</h2><p>Start plain, then shape it with your group.</p></div></div><div class="settings-card card"><label>Group name<input placeholder="e.g. Weekend tropa" id="groupNameInput"></label><label>Trip emoji<input placeholder="e.g. 🏝️" id="emojiInput"></label><label>Goal amount<input placeholder="e.g. 64000" type="number" id="goalInput"></label><label>Trip date<input type="date" id="dateInput"></label><button class="primary-button" id="saveSettings">Save changes</button></div></div>
       </div>
     </main>
   </div>
